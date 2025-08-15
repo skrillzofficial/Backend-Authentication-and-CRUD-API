@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const PORT = process.env.PORT || 5000;
-const errorHandler = require('./middleware/errorHandling'); 
+const errorHandler = require("./middleware/errorHandling");
 // Routes
 const authRouter = require("./routes/userRoute");
 const productRouter = require("./routes/productRoute");
@@ -16,8 +16,9 @@ app.use(cors());
 app.use(express.json());
 
 // ROUTES
-app.use("/api/v1/", authRouter); 
+app.use("/api/v1/", authRouter);
 app.use("/api/v1/", productRouter);
+
 
 // Test route
 app.get("/api/v1/test", (req, res) => {
